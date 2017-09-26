@@ -29,6 +29,7 @@
   },
   "dependencies": {
     "html-webpack-plugin": "^2.30.1",
+    "mongoose": "^4.11.13",
     "react-dom": "^16.0.0"
   }
 }
