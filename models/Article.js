@@ -34,7 +34,7 @@ ArticleSchema.pre('save', function (next) {
           next();
       }else{                
           console.log('article exists: ',self.title);
-          next(new Error("article exists!"));
+          next(new Error("article already exists in database!"));
       }
   });
 }) ;
