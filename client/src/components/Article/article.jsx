@@ -12,7 +12,7 @@ const Article = (props) =>
             Date: <span>{props.date}</span>
         </div>
         <div className="row">
-            URL: <a href={props.link}>{props.url}</a>
+            URL: <a href={props.link}>{props.link}</a>
         </div>
         <div className="row">
             <p>Snippet: {props.snippet}</p>
