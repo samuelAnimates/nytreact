@@ -27,6 +27,18 @@ class Main extends Component{
         .catch(err => console.log(err));
     };
 
+    saveArticle = (articleData) => {
+        console.log("Article Data"+JSON.stringify(articleData));
+        API.saveArticle({
+            title: articleData.title,
+            link: articleData.link,
+            date: articleData.date,
+            snippet: articleData.snippet
+          })
+            .then(res => this.loadSavedArticles())
+            .catch(err => console.log(err));
+    };
+
     handleInputChange = (event) => {
         const name = event.target.name;
         const value = event.target.value;
@@ -77,6 +89,7 @@ class Main extends Component{
                     />
                     <Results 
                         resultsArray = {this.state.result}
+                        saveArticle = {this.saveArticle}
                     />
                 </div>
                 <div className='container'>

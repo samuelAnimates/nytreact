@@ -19,7 +19,16 @@ const Results = (props) =>
                 snippet = {result[1].snippet}
                 date = {result[1].pub_date.substr(0, [10])}
               />
-              <SaveButton />
+              <SaveButton 
+                onClick={() => props.saveArticle(
+                  { 
+                    title: result[1].headline.main,
+                    date: result[1].pub_date.substr(0, [10]),
+                    link: result[1].web_url,
+                    snippet: result[1].snippet
+                  }
+                )}
+              />
             </div>
         </div>
       )}

@@ -17,7 +17,7 @@ module.exports = {
   },
   create: function(req, res) {
     db.Article
-      .create(req.body)
+      .create({title: req.body.title, date: req.body.date, link: req.body.link, snippet: req.body.snippet})
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },
