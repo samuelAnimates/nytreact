@@ -1,5 +1,6 @@
 import React, { Component }  from "react";
 import Search from "../Search";
+import Saved from "../Saved";
 import Results from "../Results";
 import API from "../../utils/API.js";
 
@@ -9,12 +10,15 @@ class Main extends Component{
         super();
         this.state = {
             result: [],
-            search: ""
+            search: "",
+            savedArticles: [],
+
         }
     }
 
     componentDidMount() {
         this.searchArticles("Smoking");
+        this.loadSavedArticles();
     }
 
     handleInputChange = (event) => {
@@ -31,16 +35,23 @@ class Main extends Component{
         this.searchArticles(this.state.search);
     };
 
+    loadSavedArticles = () => {
+    API.getArticles()
+        .then(res =>{
+            console.log(res);
+            this.setState({ savedArticles: res.data});
+        })
+        .catch(err => console.log(err));
+    };
+
     searchArticles = (query) => {
         console.log(`Query: ${query}`)
         API.search(query)
         .then(res =>{
-            console.log(res);
             this.setState({ result: Object.keys(res.data.response.docs).map(function(key){
                 return [Number(key), res.data.response.docs[key]]; 
                 })
             });
-            console.log(this.state.result);
         }) 
         .catch(err => console.log(err));
     };
@@ -60,6 +71,11 @@ class Main extends Component{
                     />
                     <Results 
                         resultsArray = {this.state.result}
+                    />
+                </div>
+                <div className='container'>
+                    <Saved
+                        savedArray = {this.state.savedArticles}
                     />
                 </div>
             </div>

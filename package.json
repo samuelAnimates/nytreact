@@ -1,7 +1,7 @@
 {
-  "name": "mern",
+  "name": "nytreact",
   "version": "1.0.0",
-  "description": "Mern Demo",
+  "description": "New York Times react app, using MERN stack",
   "main": "server.js",
   "scripts": {
     "server": "node server.js",
@@ -11,8 +11,8 @@
     "seed": "node scripts/seedDB.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
-  "license": "ISC",
+  "author": "Samuel R. Mendez",
+  "license": "MIT",
   "devDependencies": {
     "concurrently": "^3.5.0",
     "nodemon": "^1.11.0"

@@ -1,7 +1,6 @@
 import React from "react";
 import Article from "../Article"
 import SaveButton from "../SaveButton"
-import DeleteButton from "../DeleteButton"
 
 const Results = (props) =>
   
