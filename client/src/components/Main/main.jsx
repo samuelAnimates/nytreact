@@ -1,6 +1,6 @@
 import React, { Component }  from "react";
-import Search from "../Search/search.jsx";
-import Results from "../Results/results.jsx";
+import Search from "../Search";
+import Results from "../Results";
 import API from "../../utils/API.js";
 
 class Main extends Component{
@@ -28,10 +28,11 @@ class Main extends Component{
     // When the form is submitted, search the Giphy API for `this.state.search`
     handleFormSubmit = (event) => {
         event.preventDefault();
-        this.searchArticles(this.state.result.array);
+        this.searchArticles(this.state.search);
     };
 
     searchArticles = (query) => {
+        console.log(`Query: ${query}`)
         API.search(query)
         .then(res =>{
             console.log(res);

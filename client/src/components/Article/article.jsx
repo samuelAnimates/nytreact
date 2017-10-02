@@ -12,10 +12,10 @@ const Article = (props) =>
             Date: <span>{props.date}</span>
         </div>
         <div className="row">
-            URL: <a href={props.url}>{props.url}</a>
+            URL: <a href={props.link}>{props.url}</a>
         </div>
         <div className="row">
-            <p>Snippet: {props.blurb}</p>
+            <p>Snippet: {props.snippet}</p>
         </div>
     </div>
   </div>

@@ -1,37 +1,22 @@
 {
-  "name": "nytreact",
+  "name": "mern",
   "version": "1.0.0",
-  "description": "React App that scrapes and displays news from NYT",
-  "main": "index.js",
+  "description": "Mern Demo",
+  "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "webpack-dev-server"
+    "server": "node server.js",
+    "client": "node scripts/start-client.js",
+    "start": "concurrently \"nodemon server.js\" \"npm run client\"",
+    "build": "node scripts/build.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/smendez92/nytreact.git"
-  },
-  "author": "Samuel R. Mendez",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/smendez92/nytreact/issues"
-  },
-  "homepage": "https://github.com/smendez92/nytreact#readme",
+  "author": "",
+  "license": "ISC",
   "devDependencies": {
-    "babel-core": "^6.26.0",
-    "babel-loader": "^7.1.2",
-    "babel-plugin-transform-class-properties": "^6.24.1",
-    "babel-preset-es2015": "^6.24.1",
-    "babel-preset-react": "^6.24.1",
-    "react": "^16.0.0",
-    "react-dom": "^16.0.0",
-    "webpack": "^3.6.0",
-    "webpack-dev-server": "^2.8.2"
+    "concurrently": "^3.5.0",
+    "nodemon": "^1.11.0"
   },
   "dependencies": {
-    "axios": "^0.16.2",
-    "html-webpack-plugin": "^2.30.1",
-    "mongoose": "^4.11.13",
-    "react-dom": "^16.0.0"
+    "express": "^4.15.4"
   }
 }
