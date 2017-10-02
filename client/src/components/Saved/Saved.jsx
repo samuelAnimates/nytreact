@@ -18,8 +18,9 @@ const Saved = (props) =>
                 link = {result.link}
                 snippet = {result.snippet}
                 date = {result.date}
+                key = {result._id}
               />
-              <DeleteButton />
+              <DeleteButton onClick={() => props.deleteArticle(result._id)} />
             </div>
         </div>
       )}

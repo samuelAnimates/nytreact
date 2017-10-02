@@ -21,6 +21,12 @@ class Main extends Component{
         this.loadSavedArticles();
     }
 
+    deleteArticle = (id) => {
+      API.deleteArticle(id)
+        .then(res => this.loadSavedArticles())
+        .catch(err => console.log(err));
+    };
+
     handleInputChange = (event) => {
         const name = event.target.name;
         const value = event.target.value;
@@ -76,6 +82,7 @@ class Main extends Component{
                 <div className='container'>
                     <Saved
                         savedArray = {this.state.savedArticles}
+                        deleteArticle = {this.deleteArticle}
                     />
                 </div>
             </div>

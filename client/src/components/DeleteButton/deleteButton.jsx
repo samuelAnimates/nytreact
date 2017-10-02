@@ -4,7 +4,7 @@ const DeleteButton = (props) =>
   
   
     <div>
-      <button className="btn btn-danger">Delete Button</button>
+      <button className="btn btn-danger" {...props}>Delete Button</button>
   </div>
 
 
