@@ -56,7 +56,6 @@ class Main extends Component{
     loadSavedArticles = () => {
     API.getArticles()
         .then(res =>{
-            console.log(res);
             this.setState({ savedArticles: res.data});
         })
         .catch(err => console.log(err));
@@ -66,6 +65,7 @@ class Main extends Component{
         console.log(`Query: ${query}`)
         API.search(query)
         .then(res =>{
+            console.log(typeof(res.data));
             this.setState({ result: Object.keys(res.data.response.docs).map(function(key){
                 return [Number(key), res.data.response.docs[key]]; 
                 })
